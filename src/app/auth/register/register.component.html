@@ -1,0 +1,32 @@
+<h4>{{ isRegisterMode ? "SignUp" : "Login" }}</h4>
+<form #signupForm="ngForm" (ngSubmit)="onSubmit(signupForm)">
+  <div class="mb-3">
+    <label for="username" class="form-label">Username</label>
+    <input
+      name="username"
+      ngModel
+      #usernameInput="ngModel"
+      type="text"
+      class="form-control"
+      id="username"
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input
+      name="password"
+      ngModel
+      #passwordInput="ngModel"
+      type="password"
+      class="form-control"
+      id="password"
+      required
+    />
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<button class="btn btn-info mt-3" (click)="toggleMode()">
+  Swicth to: {{ isRegisterMode ? "Login" : "SignUp" }}
+</button>
